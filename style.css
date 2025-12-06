@@ -24,7 +24,7 @@ h2 {
 }
 
 .row {
-    position: relative;
+	position: relative;
 	display: flex;
 	margin-bottom: 15px;
 	gap: 20px;
@@ -60,20 +60,19 @@ button.add-btn:hover {
 	background-color: #187bcd;
 }
 
-
 .search-btn {
 	position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    border: none;
-    background: none;
-    cursor: pointer;
-    transition: color .4s;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+	border: none;
+	background: none;
+	cursor: pointer;
+	transition: color 0.4s;
 }
 
 .search-btn:hover {
-    color: #187bcd;
+	color: #187bcd;
 }
 
 .total {
@@ -100,20 +99,31 @@ button.add-btn:hover {
 	display: flex;
 	padding: 10px;
 	background-color: #f7f9fc;
+	position: relative;
 	border-radius: 8px;
 	margin-bottom: 10px;
 	align-items: center;
 	justify-content: space-between;
 	border: 1px solid #e0e6ef;
+	flex-wrap: wrap;
 }
 
 .task-left {
 	display: flex;
 	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.task-title {
+	word-break: break-word; 
+	white-space: normal; 
+	max-width: 100%;
 }
 
 .check {
 	margin-right: 10px;
+	position: relative;
 }
 
 .check-false {
@@ -121,9 +131,21 @@ button.add-btn:hover {
 	height: 18px;
 	border: 2px solid #4caf50;
 	border-radius: 4px;
+	cursor: pointer;
+}
+
+.completed {
+	color: #4caf50;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .remove {
+	position: absolute;
+	right: 10px;
+	top: 10px;
 	color: #ff4757;
 	font-weight: bold;
 	cursor: pointer;

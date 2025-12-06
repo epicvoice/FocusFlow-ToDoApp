@@ -7,6 +7,7 @@ const searchBtn = document.querySelector('.search-btn');
 const totalTasksNumber = document.querySelector('.total');
 let taskCount = 0;
 
+const container = document.getElementById('container');
 const deleteAllBtn = document.querySelector('.delete-all');
 
 const createNewTask = () => {
@@ -17,7 +18,7 @@ const createNewTask = () => {
 		newTask.classList.add('task');
 		newTask.innerHTML = `<div class="task-left">
                 <div class="check check-false"></div>
-                <span>${newTaskContent}</span>
+                <span class = "task-title">${newTaskContent}</span>
             </div>
             <div class="remove"><i class="fa-solid fa-xmark"></i></div>`;
 		document.getElementById('container').appendChild(newTask);
@@ -37,6 +38,25 @@ const countTasks = () => {
 	totalTasksNumber.innerHTML = `Total tasks: <strong>${taskCount}</strong>`;
 };
 
+container.addEventListener('click', (e) => {
+	if (e.target.closest('.remove')) {
+		const taskToRemove = e.target.closest('.task');
+		if (taskToRemove) {
+			taskToRemove.remove();
+			taskCount--;
+			countTasks();
+			console.log('Task removed.');
+		}
+	} else if (e.target.closest('.check')) {
+		const checkDiv = e.target.closest('.check');
+		checkDiv.innerHTML =
+			'<div class="completed"><i class="fa-solid fa-check"></i></div>';
+		const taskContent = document.querySelector('.task-title')
+		taskContent.style.textDecoration = "line-through"
+		
+	}
+});
+
 const deleteAllTasks = () => {
 	document.querySelectorAll('.task').forEach((el) => el.remove());
 
@@ -49,4 +69,5 @@ newTaskTitle.addEventListener('keydown', (e) => {
 		createNewTask();
 	}
 });
+
 deleteAllBtn.addEventListener('click', deleteAllTasks);
