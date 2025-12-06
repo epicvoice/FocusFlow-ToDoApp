@@ -10,14 +10,16 @@ The static interface already includes:
   - a checkmark box on the left (for marking tasks as done),
   - a delete icon on the right (for removing a single task).
 --------------------------------------------------------------
+## What is working now
+- Dynamic creation and insertion of .task elements
+- Event handling:
+    Add button click
+    Enter key submission
+    Delete All button
+    Basic error handling (empty input blocked)
 
 #  Planned JavaScript Functionality
 The following JS features will be added soon:
-
-## Add Tasks
-- Automatically insert new tasks into the list.
-- Prevent adding empty inputs.
-- Update the total task count dynamically.
 
 ##  Search / Filter Tasks
 - Real-time filtering based on typed text.
@@ -31,16 +33,12 @@ The following JS features will be added soon:
 - Remove a task using the “X” icon.
 - Smooth removal animations (optional).
 
-## Delete All Tasks
-- Clear the entire list with one button.
-- Optional confirmation dialog.
-
-## Choose among Categories (planned)
+## Choose among Categories 
 - Select a category to which new task must be assigned (work, study etc.)
 - Different colors for each category
 
-## LocalStorage Support (planned)
-- Tasks will persist after page reload.
+## LocalStorage Support
+- Tasks will be saved after page reload.
 - Store completed status, titles, and the entire list.
 
 
